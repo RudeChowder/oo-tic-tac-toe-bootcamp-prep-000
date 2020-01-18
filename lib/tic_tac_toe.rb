@@ -57,8 +57,8 @@ class TicTacToe
       if space == "X" || space == "O"
         count += 1
       end
-      return count
     end
+    count
   end
   
   def current_player
