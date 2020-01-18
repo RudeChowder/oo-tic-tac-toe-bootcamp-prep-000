@@ -65,7 +65,7 @@ class TicTacToe
     @current_player = (turn_count % 2).even? ? "X" : "O"
   end
   
-  def won?(board)
+  def won?
   #put all possible winning rows into a collection
   possible_wins = WIN_COMBINATIONS.select do |combo|
     combo.all? do |index|
