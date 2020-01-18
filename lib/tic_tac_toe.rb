@@ -65,5 +65,23 @@ class TicTacToe
     @current_player = (turn_count % 2).even? ? "X" : "O"
   end
   
-  
+  def won?(board)
+  #put all possible winning rows into a collection
+  possible_wins = WIN_COMBINATIONS.select do |combo|
+    combo.all? do |index|
+      position_taken?(board, index)
+    end
+  end
+  if possible_wins.empty?
+    return false
+  end
+  #check if any combos are actually wins
+  possible_wins.each do |pw|
+    if (pw.all?{|i| board[i] == "X"} || pw.all?{|i| board[i] == "O"})
+      return pw
+    end
+  end
+  #return false if nothing has won
+  return false
+end
 end
