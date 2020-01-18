@@ -69,7 +69,7 @@ class TicTacToe
   #put all possible winning rows into a collection
   possible_wins = WIN_COMBINATIONS.select do |combo|
     combo.all? do |index|
-      position_taken?(board, index)
+      position_taken?(index)
     end
   end
   if possible_wins.empty?
@@ -77,11 +77,13 @@ class TicTacToe
   end
   #check if any combos are actually wins
   possible_wins.each do |pw|
-    if (pw.all?{|i| board[i] == "X"} || pw.all?{|i| board[i] == "O"})
+    if (pw.all?{|i| @board[i] == "X"} || pw.all?{|i| @board[i] == "O"})
       return pw
     end
   end
   #return false if nothing has won
   return false
-end
+  end
+  
+  
 end
