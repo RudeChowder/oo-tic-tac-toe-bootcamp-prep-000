@@ -46,8 +46,11 @@ class TicTacToe
       puts "Sorry, that is not a legal move."
       turn
     else
-      move(index, current_player(board))
+      move(index, current_player())
       display_board
     end
   end
+  
+  def turn_count
+    
 end
