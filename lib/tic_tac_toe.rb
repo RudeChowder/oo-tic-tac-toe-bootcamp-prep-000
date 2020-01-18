@@ -57,7 +57,7 @@ class TicTacToe
       if space == "X" || space == "O"
         count += 1
       end
-      count
+      return count
     end
   end
   
