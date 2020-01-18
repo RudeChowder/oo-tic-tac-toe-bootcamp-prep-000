@@ -61,6 +61,6 @@ class TicTacToe
   end
   
   def current_player
-    
+    @current_player = (turn_count % 2).even? ? "X" : "O"
   end
 end
